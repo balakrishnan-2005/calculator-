@@ -1,0 +1,101 @@
+:root {
+    --bg-color: #1e1e1e;
+    --display-bg: #2d2d2d;
+    --button-bg: #333;
+    --button-hover: #444;
+    --operator-bg: #ff9500;
+    --operator-hover: #e68a00;
+    --clear-bg: #a5a5a5;
+    --clear-hover: #bbb;
+    --text-primary: #fff;
+    --text-secondary: #aaa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.display {
+    background-color: var(--display-bg);
+    padding: 20px;
+    text-align: right;
+    position: relative;
+}
+
+.previous-operand {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 20px;
+    background-color: var(--bg-color);
+}
+
+button {
+    border: none;
+    border-radius: 50px;
+    height: 70px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-primary);
+    background-color: var(--button-bg);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.operator {
+    background-color: var(--operator-bg);
+}
+
+.clear {
+    background-color: var(--clear-bg);
+    color: #000;
+}
+
+@media (max-width: 400px) {
+    button {
+        height: 60px;
+        font-size: 1.3rem;
+    }
+}
